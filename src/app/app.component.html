@@ -1,0 +1,19 @@
+<div class='container'>
+  <div class="row">
+    <div class="col-md-8">
+      <h1>
+          Welcome to {{ title }}!
+      </h1>
+      <input class='form-control' type="text" [(ngModel)]="message">{{ message }}
+      <!--<app-hello></app-hello> Selecteur déclaré dans le Hello.component.ts-->
+      <!-- <div app-hello></div> Selecteur sous forme d'attribut -->
+      <div class="app-hello"></div> <!--Selecteur sous forme de class-->
+    </div>
+      <div class="col-md-4">
+        <h3>Colonne taille 4</h3>
+      </div>
+  </div>
+</div>
+
+
+
