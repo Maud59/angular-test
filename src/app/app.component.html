@@ -1,18 +1,18 @@
-<div class='container'>
-  <div class="row">
+<!--Exercice : Composant avec : 
+- Champs textarea avec un compteur de caratère
+- Quand le nombre de caratère atteint 140, la bordure devient rouge et il n'est plus possible d'écrire
+- un message d'erreur s'affiche en dessous du text-area 
+- bouton qui permet de valider, cliquable à partir 1 caractère.--><div class='container'>
+  <!--<div class="row">
     <div class="col-md-8">
-      <h1>
-          Welcome to {{ title }}!
-      </h1>
-      <input class='form-control' type="text" [(ngModel)]="message">{{ message }}
-      <!--<app-hello></app-hello> Selecteur déclaré dans le Hello.component.ts-->
-      <!-- <div app-hello></div> Selecteur sous forme d'attribut -->
-      <div class="app-hello"></div> <!--Selecteur sous forme de class-->
+      <app-hello></app-hello> appel de notre composant
     </div>
       <div class="col-md-4">
-        <h3>Colonne taille 4</h3>
       </div>
   </div>
+</div>-->
+<app-area [tailleMax]="40"></app-area>
+<app-area [nomButton]="'Envoyer'"></app-area>
 </div>
 
 

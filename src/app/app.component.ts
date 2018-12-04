@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AssertNotNull } from '@angular/compiler';
 
 @Component({
   selector: 'app-root', // selecteur
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'] // styles css appliqué
 })
 export class AppComponent { // L'export permettra l'import sur un aute fichier
-  title = 'Aston application';
-}
+  
+  }

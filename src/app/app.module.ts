@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
-import {HelloComponent} from './hello.component'; // éviter de mettre l'extension
+import {HelloComponent} from './hello.component';
+import {AreaComponent} from './area.component'; // éviter de mettre l'extension
 // Importation de notre composant
 
 @NgModule({ // = décorateur, directive
@@ -12,6 +13,7 @@ import {HelloComponent} from './hello.component'; // éviter de mettre l'extensi
   declarations: [
     AppComponent,
     HelloComponent, // déclaration du component
+    AreaComponent,
   ],
   imports: [
     BrowserModule,
