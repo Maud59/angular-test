@@ -4,7 +4,9 @@ import {FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import {HelloComponent} from './hello.component';
-import {AreaComponent} from './area.component'; // éviter de mettre l'extension
+import {AreaComponent} from './area.component';
+import { ToggleBoxComponent } from './toggle-box/toggle-box.component';
+import { DateDistancePipe } from './date-distance.pipe'; // éviter de mettre l'extension
 // Importation de notre composant
 
 @NgModule({ // = décorateur, directive
@@ -13,7 +15,7 @@ import {AreaComponent} from './area.component'; // éviter de mettre l'extension
   declarations: [
     AppComponent,
     HelloComponent, // déclaration du component
-    AreaComponent,
+    AreaComponent, ToggleBoxComponent, DateDistancePipe,
   ],
   imports: [
     BrowserModule,

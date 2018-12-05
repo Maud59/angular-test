@@ -18,6 +18,7 @@ export class HelloComponent{
  //data = {name: 'Aston', ville : 'Lille'}; // doit renvoyer une string pour être interprété
   dataTest = ['a','b','c'];
   name = '';
+  color='';
 
   changeColor(): string {// fonction return string
     switch(this.message){
@@ -29,6 +30,10 @@ export class HelloComponent{
       return 'purple';
       //retourne un type
     }
+  }
+
+  colorInput(){
+    return this.colorInput;
   }
   //addAnimal(animal:Animal){ La fonction pour ajouter un animal, attend un objet du type Animal }
   //assertion (cast, conversion du type entre <>)

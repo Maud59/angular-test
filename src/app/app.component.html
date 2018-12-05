@@ -2,7 +2,8 @@
 - Champs textarea avec un compteur de caratère
 - Quand le nombre de caratère atteint 140, la bordure devient rouge et il n'est plus possible d'écrire
 - un message d'erreur s'affiche en dessous du text-area 
-- bouton qui permet de valider, cliquable à partir 1 caractère.--><div class='container'>
+- bouton qui permet de valider, cliquable à partir 1 caractère.-->
+<div class='container'>
   <!--<div class="row">
     <div class="col-md-8">
       <app-hello></app-hello> appel de notre composant
@@ -11,9 +12,28 @@
       </div>
   </div>
 </div>-->
-<app-area [tailleMax]="40"></app-area>
-<app-area [nomButton]="'Envoyer'"></app-area>
+  <app-toggle-box>
+    <p>Hello Transclusion</p>
+  </app-toggle-box>
+<!--Notre template est appelé 2 fois, mais le contenu varie dans notre balise. C'est notre template qui fera le nécessaire pour prendre le contenu et l'adapter-->
+  <app-toggle-box>
+    <h5>Hello paragraphe 2</h5>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, molestiae.</p>
+  </app-toggle-box>
+  <app-area [size]="40"></app-area>
+  <app-area [nomButton]="'Envoyer'" (onMessage)='add($event)'></app-area>
+  <!--Le onMessage = alias du area.component.ts
+ Le add = fonction dans app.component.ts-->
+
+  <div *ngFor='let msg of messages, let i=index'>
+    <p>Message : {{msg.texte}}</p>
+    <p>Date : {{msg.date | date :'short'}}</p>
+    <!--Short permet d'avoir un format date-->
+    <p>Envoi : {{msg.date | dateDistance }}</p>
+    <button id ='unitSuppr' type='submit'class="btn btn-info mt-3" (click)="delete(i)">Supprimer</button>
+    <p>Vous avez {{compteur}} messages</p>
+  </div>
+  <button id= 'allSuppr' type='submit'class="btn btn-info mt-3" (click)="deleteAll()">Tout supprimer</button>
 </div>
 
-
-
+<!--Créer une ligne d'étoiles d'avis, colorer les étoiles et lors du click, actionne les étoiles jusqu'à celle sélectionnée-->
