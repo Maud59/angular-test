@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import {HelloComponent} from './hello.component';
 import {AreaComponent} from './area.component';
 import { ToggleBoxComponent } from './toggle-box/toggle-box.component';
-import { DateDistancePipe } from './date-distance.pipe'; // éviter de mettre l'extension
+import { DateDistancePipe } from './date-distance.pipe';
+import { TestDirective } from './directives/test.directive'; // éviter de mettre l'extension
 // Importation de notre composant
 
 @NgModule({ // = décorateur, directive
@@ -15,7 +16,7 @@ import { DateDistancePipe } from './date-distance.pipe'; // éviter de mettre l'
   declarations: [
     AppComponent,
     HelloComponent, // déclaration du component
-    AreaComponent, ToggleBoxComponent, DateDistancePipe,
+    AreaComponent, ToggleBoxComponent, DateDistancePipe, TestDirective,
   ],
   imports: [
     BrowserModule,

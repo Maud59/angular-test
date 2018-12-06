@@ -20,20 +20,31 @@
     <h5>Hello paragraphe 2</h5>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, molestiae.</p>
   </app-toggle-box>
-  <app-area [size]="40"></app-area>
+  <!-- <app-area [size]="40"></app-area> -->
   <app-area [nomButton]="'Envoyer'" (onMessage)='add($event)'></app-area>
   <!--Le onMessage = alias du area.component.ts
  Le add = fonction dans app.component.ts-->
+  <p>Vous avez {{compteur}} messages</p>
+  <button id= 'allSuppr' type='submit'class="btn btn-info mt-3" (click)="deleteAll()">Tout supprimer</button>
 
-  <div *ngFor='let msg of messages, let i=index'>
+  <!-- Appel de notre directive appTest avec notre constructeur de div -->
+  <div *ngFor='let msg of messages, let i=index' appTest [message]='msg'>
     <p>Message : {{msg.texte}}</p>
+    
     <p>Date : {{msg.date | date :'short'}}</p>
     <!--Short permet d'avoir un format date-->
     <p>Envoi : {{msg.date | dateDistance }}</p>
+    <div class='rating'>
+      <div class="far fa-star"></div>
+      <div class="far fa-star"></div>
+      <div class="far fa-star"></div>
+      <div class="far fa-star"></div>
+      <div class="far fa-star"></div> 
+    </div>
+    <br>
     <button id ='unitSuppr' type='submit'class="btn btn-info mt-3" (click)="delete(i)">Supprimer</button>
-    <p>Vous avez {{compteur}} messages</p>
   </div>
-  <button id= 'allSuppr' type='submit'class="btn btn-info mt-3" (click)="deleteAll()">Tout supprimer</button>
+
 </div>
 
 <!--Créer une ligne d'étoiles d'avis, colorer les étoiles et lors du click, actionne les étoiles jusqu'à celle sélectionnée-->
